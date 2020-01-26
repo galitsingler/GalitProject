@@ -17,6 +17,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>Galitproject</Name>
     <RootNamespace>Galitproject</RootNamespace>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,12 +28,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Galitproject\models\LocalDatabaseRoutines.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="Galitproject\__init__.py" />
     <Compile Include="Galitproject\views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Galitproject\" />
+    <Folder Include="Galitproject\models\" />
     <Folder Include="Galitproject\static\" />
     <Folder Include="Galitproject\static\content\" />
     <Folder Include="Galitproject\static\fonts\" />
