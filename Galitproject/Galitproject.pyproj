@@ -31,6 +31,9 @@
     <Compile Include="Galitproject\models\LocalDatabaseRoutines.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Galitproject\models\QueryFormStructure.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="Galitproject\__init__.py" />
     <Compile Include="Galitproject\views.py" />
