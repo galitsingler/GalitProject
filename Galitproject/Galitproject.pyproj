@@ -44,11 +44,16 @@
     <Folder Include="Galitproject\static\" />
     <Folder Include="Galitproject\static\content\" />
     <Folder Include="Galitproject\static\fonts\" />
+    <Folder Include="Galitproject\static\data\" />
     <Folder Include="Galitproject\static\scripts\" />
     <Folder Include="Galitproject\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Galitproject\static\data\user.csv" />
+    <Content Include="Galitproject\templates\dataset.html" />
     <Content Include="Galitproject\templates\query.html" />
+    <Content Include="Galitproject\templates\DataModel.html" />
+    <Content Include="Galitproject\templates\register.html" />
     <Content Include="requirements.txt" />
     <Content Include="Galitproject\static\content\bootstrap.css" />
     <Content Include="Galitproject\static\content\bootstrap.min.css" />
@@ -74,7 +79,7 @@
     <Content Include="Galitproject\static\scripts\_references.js" />
     <Content Include="Galitproject\templates\about.html" />
     <Content Include="Galitproject\templates\contact.html" />
-    <Content Include="Galitproject\templates\index.html" />
+    <Content Include="Galitproject\templates\home.html" />
     <Content Include="Galitproject\templates\layout.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
