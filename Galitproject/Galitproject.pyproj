@@ -49,11 +49,15 @@
     <Folder Include="Galitproject\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Galitproject\static\data\olim.csv" />
+    <Content Include="Galitproject\static\data\olim1.csv" />
+    <Content Include="Galitproject\static\data\olim1.xlsx" />
     <Content Include="Galitproject\static\data\user.csv" />
-    <Content Include="Galitproject\templates\dataset.html" />
+    <Content Include="Galitproject\templates\data.html" />
+    <Content Include="Galitproject\templates\olim.html" />
     <Content Include="Galitproject\templates\query.html" />
-    <Content Include="Galitproject\templates\DataModel.html" />
     <Content Include="Galitproject\templates\register.html" />
+    <Content Include="Galitproject\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="Galitproject\static\content\bootstrap.css" />
     <Content Include="Galitproject\static\content\bootstrap.min.css" />

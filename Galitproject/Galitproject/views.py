@@ -49,7 +49,7 @@ from Galitproject.models.QueryFormStructure import UserRegistrationFormStructure
 def home():
     """Renders the home page."""
     return render_template(
-        'home.html',
+        'index.html',
         title='Home Page',
         year=datetime.now().year,
     )
@@ -64,6 +64,16 @@ def contact():
         message='my contact page.'
     )
 
+@app.route('/data')
+def data():
+    """Renders the contact page."""
+    return render_template(
+        'data.html',
+        title='data',
+        year=datetime.now().year,
+        message='my data page.'
+    )
+
 @app.route('/about')
 def about():
     """Renders the about page."""
@@ -74,15 +84,8 @@ def about():
         message='about page.'
     )
 
-@app.route('/DataModel')
-def DataModel():
-    """Renders the about page."""
-    return render_template(
-        'DataModel.html',
-        title='Data Model',
-        year=datetime.now().year,
-        message='Your application description page.'
-    )
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def Register():
     form = UserRegistrationFormStructure(request.form)
@@ -127,17 +130,22 @@ def Login():
         title='Login to data analysis',
         year=datetime.now().year,
         repository_name='Pandas',
-        )
+     
+     )
 
-@app.route('/dataset')
-def dataset():
-    df = pd.read_excel('Galitproject/static/data/olim.xls')
-    raw_data_table = df.to_html(classes='table table-hover', max_rows=8)
 
+@app.route('/olim')
+def olim():
+    
+    df = pd.read_excel( path.join(path.dirname(__file__), 'static\\data\\olim1.xlsx'),encoding = "utf-8")
+    raw_data_table = df.to_html(classes = 'table table-hover')
+   
+    """Renders the contact page."""
     return render_template(
-        'dataset.html',
-        title='Dataset Description',
-        message='Dataset description page',
-        raw_data_table=raw_data_table,
-        year=datetime.now().year
-        )
+        'olim.html',
+      
+        raw_data_table = raw_data_table,
+        year=datetime.now().year,
+        message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
+
+    )
