@@ -10,9 +10,9 @@ def create_LocalDatabaseServiceRoutines():
 
 class LocalDatabaseServiceRoutines(object):
     def __init__(self):
-        self.name = 'Data base service routines'
+        self.name = 'data base service routines'
         self.index = {}
-        self.UsersDataFile = path.join(path.dirname(__file__), '..\\static\\Data\\users.csv')
+        self.UsersDataFile = path.join(path.dirname(__file__), '..\\static\\data\\user.csv')
 
 # -------------------------------------------------------
 # Read users data into a dataframe

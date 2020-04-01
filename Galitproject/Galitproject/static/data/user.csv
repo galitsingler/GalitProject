@@ -1,4 +1,4 @@
-﻿EmailAddr,FirstName,LastName,PhoneNum,password,username
+EmailAddr,FirstName,LastName,PhoneNum,password,username
 No-Email,Tichonet,Teacher,No-Phone,Tichonet, 123456
 rr,qq,ww,ee,yy,tt
 dd,aa,bb,cc,ff,ee
@@ -6,3 +6,6 @@ dd,aa,bb,cc,ff,ee
 44,11,22,33,11,88
 ii,oo,kk,mm,nn,jj
 gad@lidror.co.il,Gad,Lidror,0522684245,22,glidror
+t,t,t,t,t,t
+f,f,f,f,f,f
+rchomsky18@gamil.com,Roni,Singler,0528976162,Ronisi18,Ronisi

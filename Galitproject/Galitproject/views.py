@@ -41,8 +41,14 @@ from wtforms import ValidationError
 from Galitproject.models.QueryFormStructure import QueryFormStructure 
 from Galitproject.models.QueryFormStructure import LoginFormStructure 
 from Galitproject.models.QueryFormStructure import UserRegistrationFormStructure 
+from Galitproject.models.QueryFormStructure import olimform 
+import base64
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+from flask_bootstrap import Bootstrap
+bootstrap = Bootstrap(app)
 
-
+db_Functions = create_LocalDatabaseServiceRoutines() 
 
 @app.route('/')
 @app.route('/home')
@@ -85,6 +91,47 @@ def about():
     )
 
 
+@app.route('/Query' , methods = ['GET' , 'POST'])
+def Query():
+
+    
+    form1 = olimform()
+    chart = ''
+
+   
+    df = pd.read_excel( path.join(path.dirname(__file__), 'static\\data\\olim4.xlsx'),encoding = "utf-8")
+    print(df)
+    x=df["Year"].tolist()
+    year_choices=list(zip(x,x))
+   
+    form1.years.choices = year_choices 
+
+
+    if request.method == 'POST':
+        year_list = form1.years.data
+        print(year_list)
+        #df=df.drop(df.index[[0]])
+        df=df.drop('olim',1 )
+        df=df.set_index('Year')
+        df.index=df.index.astype(str)
+        print(df)
+        print(df.index.tolist())
+        df=df.loc[year_list]
+        print(df)
+        df=df.transpose()
+        print(df)
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        fig.subplots_adjust(bottom=0.4)
+        df.plot(kind='bar',ax=ax)
+        chart = plot_to_img(fig)
+
+    
+    return render_template(
+        'Query.html',
+        form1 = form1,
+        chart = chart
+    )
 
 @app.route('/register', methods=['GET', 'POST'])
 def Register():
@@ -107,7 +154,7 @@ def Register():
         title='Register New User',
         year=datetime.now().year,
         repository_name='Pandas',
-        )
+        ) 
 
 # -------------------------------------------------------
 # Login page
@@ -123,21 +170,20 @@ def Login():
             #return redirect('<were to go if login is good!')
         else:
             flash('Error in - Username and/or password')
-
+   
     return render_template(
         'login.html', 
         form=form, 
         title='Login to data analysis',
         year=datetime.now().year,
         repository_name='Pandas',
-     
-     )
+        )
 
 
 @app.route('/olim')
 def olim():
     
-    df = pd.read_excel( path.join(path.dirname(__file__), 'static\\data\\olim1.xlsx'),encoding = "utf-8")
+    df = pd.read_excel( path.join(path.dirname(__file__), 'static\\data\\olim4.xlsx'),encoding = "utf-8")
     raw_data_table = df.to_html(classes = 'table table-hover')
    
     """Renders the contact page."""
@@ -149,3 +195,10 @@ def olim():
         message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
 
     )
+
+def plot_to_img(fig):
+    pngImage = io.BytesIO()
+    FigureCanvas(fig).print_png(pngImage)
+    pngImageB64String = "data:image/png;base64,"
+    pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
+    return pngImageB64String
