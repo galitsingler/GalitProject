@@ -38,7 +38,7 @@ class UserRegistrationFormStructure(FlaskForm):
 
 class olimform(FlaskForm):
     
-    years = SelectMultipleField('Select Multiple:' , validators = [DataRequired] )
+    years = SelectMultipleField('Select Multiple Year:' , validators = [DataRequired] )
     submit = SubmitField('submit')
 
 

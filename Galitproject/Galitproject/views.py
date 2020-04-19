@@ -100,7 +100,6 @@ def Query():
 
    
     df = pd.read_excel( path.join(path.dirname(__file__), 'static\\data\\olim4.xlsx'),encoding = "utf-8")
-    print(df)
     x=df["Year"].tolist()
     year_choices=list(zip(x,x))
    
@@ -109,17 +108,13 @@ def Query():
 
     if request.method == 'POST':
         year_list = form1.years.data
-        print(year_list)
+        
         #df=df.drop(df.index[[0]])
         df=df.drop('olim',1 )
         df=df.set_index('Year')
         df.index=df.index.astype(str)
-        print(df)
-        print(df.index.tolist())
         df=df.loc[year_list]
-        print(df)
         df=df.transpose()
-        print(df)
         fig = plt.figure()
         ax = fig.add_subplot(111)
         fig.subplots_adjust(bottom=0.4)
