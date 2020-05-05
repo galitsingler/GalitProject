@@ -1,23 +1,24 @@
 ﻿{% extends "layout.html" %}
 
 {% block content %}
-    <head>
-        <style>
-            body {
-                background-image: url(https://www.nir-zvi.co.il/wp-content/uploads/2017/03/7100-l.jpg);
-            }
+<head>
+    <style>
+        body {
+            background-image: url(https://www.nir-zvi.co.il/wp-content/uploads/2017/03/7100-l.jpg);
+        }
 
-            h2 {
-                text-align: center;
-            }
-        </style>
-    </head>
-    <h2 style="color:DodgerBlue;"><b><font size="12">{{ title }}</font></b></h2>
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<h2 style="color:DodgerBlue;"><b><font size="12">{{ title }}</font></b></h2>
 
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
     {% for message in messages %}
-<h3>{{ message[1] }}</h3>
+<h3 style="background-color:LightGray;">{{ message[1] }}</h3>
 <br />
     {% endfor %}
 {% endif %}
@@ -26,14 +27,13 @@
 <br />
 <br />
 <br />
-<form method=post >
+<form method=post>
     {{ form.csrf }}
     {{ form.csrf_token }}
     <table style="color:DodgerBlue;">
         <tr>
             <td>
                 <b><font size="6">{{ form.username.label }}</font></b>
-                
             </td>
             <td>
                 {{ form.username }}
@@ -47,7 +47,6 @@
         <tr>
             <td>
                 <b><font size="6">{{ form.password.label }}</font></b>
-                
             </td>
             <td>
                 {{ form.password }}
