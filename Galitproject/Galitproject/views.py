@@ -2,23 +2,15 @@
 Routes and views for the flask application.
 """
 
-from datetime import datetime
-from flask import render_template
+
+
 from Galitproject import app
-
-
-from datetime import datetime
-from flask import render_template
 
 from Galitproject.models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
 
 
 from datetime import datetime
-from flask import render_template, redirect, request
-
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
+from flask import render_template, redirect, request, flash
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -32,17 +24,10 @@ import base64
 
 from os import path
 
-from flask   import Flask, render_template, flash, request
-from wtforms import Form, BooleanField, StringField, PasswordField, validators
-from wtforms import TextField, TextAreaField, SubmitField, SelectField, DateField
-from wtforms import ValidationError
-
-
 from Galitproject.models.QueryFormStructure import QueryFormStructure 
 from Galitproject.models.QueryFormStructure import LoginFormStructure 
 from Galitproject.models.QueryFormStructure import UserRegistrationFormStructure 
 from Galitproject.models.QueryFormStructure import olimform 
-import base64
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from flask_bootstrap import Bootstrap
@@ -50,26 +35,29 @@ bootstrap = Bootstrap(app)
 
 db_Functions = create_LocalDatabaseServiceRoutines() 
 
+#home page
+#מידע על העולים 
 @app.route('/')
 @app.route('/home')
 def home():
-    """Renders the home page."""
     return render_template(
         'index.html',
         title='Home Page',
         year=datetime.now().year,
     )
-
+#contact page
+#המידע עלי 
 @app.route('/contact')
 def contact():
-    """Renders the contact page."""
+    
     return render_template(
         'contact.html',
         title='Contact',
         year=datetime.now().year,
         message='my contact page.'
     )
-
+#data base page
+#מידע על המאגר מידע שלי ומכיל את קישור לעמוד של המאגר
 @app.route('/data')
 def data():
     """Renders the contact page."""
@@ -79,7 +67,8 @@ def data():
         year=datetime.now().year,
         message='my data page.'
     )
-
+#abut page
+#בעמוד זה המשתמשים יוכלו לקרוא על הכלים הטכנולוגיים שהשתמשתי כדי לכתוב את האתר
 @app.route('/about')
 def about():
     """Renders the about page."""
@@ -90,7 +79,8 @@ def about():
         message='about page.'
     )
 
-
+#query page
+#גרף של השננים שהמשתמש בוחר
 @app.route('/Query' , methods = ['GET' , 'POST'])
 def Query():
 
@@ -127,7 +117,8 @@ def Query():
         form1 = form1,
         chart = chart
     )
-
+#register page
+#כדי להירשם
 @app.route('/register', methods=['GET', 'POST'])
 def Register():
     form = UserRegistrationFormStructure(request.form)
@@ -151,10 +142,10 @@ def Register():
         repository_name='Pandas',
         ) 
 
-# -------------------------------------------------------
+
 # Login page
-# This page is the filter before the data analysis
-# -------------------------------------------------------
+# כדי להתחבר
+
 @app.route('/login', methods=['GET', 'POST'])
 def Login():
     form = LoginFormStructure(request.form)
@@ -162,7 +153,7 @@ def Login():
     if (request.method == 'POST' and form.validate()):
         if (db_Functions.IsLoginGood(form.username.data, form.password.data)):
             flash('Login approved!')
-            #return redirect(Query)
+            return redirect('Query')
         else:
             flash ('Error in - Username and/or password')
    
@@ -174,7 +165,7 @@ def Login():
         repository_name='Pandas',
         )
 
-
+#מכיל את מאגר המידע ונמצא בתוך העמוד של ההסבר על מאגר
 @app.route('/olim')
 def olim():
     

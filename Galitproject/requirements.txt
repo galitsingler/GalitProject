@@ -4,3 +4,4 @@ Pandas
 Matplotlib
 requests
 flask-bootstrap
+xlrd

@@ -1,91 +1,83 @@
 ﻿{% extends "layout.html" %}
 
     {% block content %}
-<head>
-    <style>
-        body {
-            background-image: url(https://www.nir-zvi.co.il/wp-content/uploads/2017/03/7100-l.jpg);
-        }
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                background-image: url(https://www.nir-zvi.co.il/wp-content/uploads/2017/03/7100-l.jpg);
+            }
 
-        h1 {
-            text-align: center;
-        }
-    </style >
-</head>
+            h1 {
+                text-align: center;
+            }
+        </style>
+    </head>
 
 <div>
     <h1 style="color:DodgerBlue;"><b><font size="12"> גלית סינגלר-פרויקט סיום</font></b></h1>
     <h1 style="color:DodgerBlue;"><b><font size="6"> פרויקט הסיום </font></b></h1>
  </div >
 
-    <div class="row" >
 
+    <div class="container">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">עולים חדשים</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <p>
+                            עולה חדש הוא מי שמבקש לגור בישראל על פי חוק השבות. חוק השבות מעניק זכות עלייה לישראל לא רק ליהודים אלא גם לאנשים ממצוא יהודי עד דור שלישי ולבני זוג של יהודים.
+                        </p>
+                        <img src="https://imgc.allpostersimages.com/img/print/u-g-P56SSV0.jpg?w=550&h=550&p=0" alt="Trulli" width="500" height="333"> .
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">סיבות העלייה</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" > </script >
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" > </script >
+                            שיוך לעם היהודי והיסטוריה משותפת, הצורך למקום בטוח מבלי שיפגעו בך ובעיות כלכליות
 
+                        </p>
+                        <img src="https://live.maariv.co.il/HttpHandlers/ShowImage.ashx?ID=291315" alt="Trulli" width="500" height="333">
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">עליות שונות בתקופה זו</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
+                            העלייה מברית המועצות לשעבר החלה ב-1987, אם כי במספרים קטנים מאוד, וב-1989, עקב שינויים פוליטיים וכלכליים בברית המועצות וקריסתה ב-1991, מספר היהודים העולים גבר משנה לשנה.
 
+                            מבצע שלומה התרחש בשנת 1991. עשרות אלפי יהודים נטשו את בתיהם ועלו כ-15,000 יהודים מאתיופיה.
 
-    <div class="container" >
+                            בשנים 1990–2009, עלו מברית המועצות לשעבר כמיליון בני אדם, מאמריקה הלטינית כ-40,000 (מתוכם 7,000 ב-2002), מארצות הברית וקנדה כ-50,000, מאנגליה כ-10,000, מצרפת כ-40,000, מאתיופיה כ-70,000 (מתוכם 20,000 ב-1991), וממדינות אחרות כ-60,000.
+                            בין השנים 2000-2015 עלו מארצות שונות באמריקה הלטינית כ-30,000 יהודים
 
-    <div class="panel-group" id="accordion" >
-    <div class="panel panel-default" >
-    <div class="panel-heading" >
-    <h4 class="panel-title" >
-    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" > עולים חדשים</a >
-    </h4 >
-    </div >
-    <div id="collapse1" class="panel-collapse collapse in" >
-    <div class="panel-body" >
-    <p >
-    עולה חדש הוא מי שמבקש לגור בישראל על פי חוק השבות. חוק השבות מעניק זכות עלייה לישראל לא רק ליהודים אלא גם לאנשים ממצוא יהודי עד דור שלישי ולבני זוג של יהודים.
-    </p >
-    <img src="https://imgc.allpostersimages.com/img/print/u-g-P56SSV0.jpg?w=550&h=550&p=0" alt="Trulli" width="500" height="333" > .
-    </div >
-    </div >
-    </div >
-    </div >
-    <div class="panel panel-default" >
-    <div class="panel-heading" >
-    <h4 class="panel-title" >
-    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" > סיבות העלייה</a >
-    </h4 >
-    </div >
-    <div id="collapse2" class="panel-collapse collapse" >
-    <div class="panel-body" >
-    <p >
-
-    שיוך לעם היהודי והיסטוריה משותפת, הצורך למקום בטוח מבלי שיפגעו בך ובעיות כלכליות
-
-    </p >
-    <img src="https://live.maariv.co.il/HttpHandlers/ShowImage.ashx?ID=291315" alt="Trulli" width="500" height="333" >
-    </div >
-    </div >
-    </div >
-    <div class="panel panel-default" >
-    <div class="panel-heading" >
-    <h4 class="panel-title" >
-    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" > עליות שונות בתקופה זו</a >
-    </h4 >
-    </div >
-    <div id="collapse3" class="panel-collapse collapse" >
-    <div class="panel-body" >
-    <p >
-    העלייה מברית המועצות לשעבר החלה ב-1987, אם כי במספרים קטנים מאוד, וב-1989, עקב שינויים פוליטיים וכלכליים בברית המועצות וקריסתה ב-1991, מספר היהודים העולים גבר משנה לשנה.
-
-    מבצע שלומה התרחש בשנת 1991. עשרות אלפי יהודים נטשו את בתיהם ועלו כ-15,000 יהודים מאתיופיה.
-
-    בשנים 1990–2009, עלו מברית המועצות לשעבר כמיליון בני אדם, מאמריקה הלטינית כ-40,000 (מתוכם 7,000 ב-2002), מארצות הברית וקנדה כ-50,000, מאנגליה כ-10,000, מצרפת כ-40,000, מאתיופיה כ-70,000 (מתוכם 20,000 ב-1991), וממדינות אחרות כ-60,000.
-    בין השנים 2000-2015 עלו מארצות שונות באמריקה הלטינית כ-30,000 יהודים
-
-    </p >
-    <img src="https://storage.googleapis.com/bhs-flat-pics/C5349BB7-A62C-4EF2-9F18-2B92DFE35F8E.jpg" alt="Trulli" width="500" height="333" >
-    </div >
-    </div >
-    </div >
-    </div >
-
-    </div >
- {% endblock %}
+                        </p>
+                        <img src="https://storage.googleapis.com/bhs-flat-pics/C5349BB7-A62C-4EF2-9F18-2B92DFE35F8E.jpg" alt="Trulli" width="500" height="333">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!--{% endblock %}-->

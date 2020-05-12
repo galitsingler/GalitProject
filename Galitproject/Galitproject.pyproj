@@ -85,7 +85,6 @@
     <Content Include="Galitproject\static\scripts\_references.js" />
     <Content Include="Galitproject\templates\about.html" />
     <Content Include="Galitproject\templates\contact.html" />
-    <Content Include="Galitproject\templates\home.html" />
     <Content Include="Galitproject\templates\layout.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
