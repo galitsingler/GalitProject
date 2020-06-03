@@ -87,7 +87,7 @@ def Query():
     
     form1 = olimform()
     chart = ''
-
+     
    
     df = pd.read_excel( path.join(path.dirname(__file__), 'static\\data\\olim4.xlsx'),encoding = "utf-8")
     x=df["Year"].tolist()
@@ -99,7 +99,6 @@ def Query():
     if request.method == 'POST':
         year_list = form1.years.data
         
-        #df=df.drop(df.index[[0]])
         df=df.drop('olim',1 )
         df=df.set_index('Year')
         df.index=df.index.astype(str)
